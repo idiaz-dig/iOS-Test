@@ -18,16 +18,16 @@ final class PostListViewController: UITableViewController {
 
     private var detailViewController: PostDetailViewController? = nil
     private lazy var viewModel = PostListViewModel()
-    
+
     private let cellIdentifier = "PostCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         title = "Reddit Posts"
-        
-        viewModel.fetchData { [weak self] in
-            self?.reloadData()
-        }
+        configureRefreshControl()
+
+        fetchData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +58,24 @@ final class PostListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PostListTableViewCell else { return UITableViewCell() }
         return cell
+    }
+    
+    // MARK: - Pull to refresh
+    
+    private func configureRefreshControl() {
+       tableView.refreshControl = UIRefreshControl()
+       tableView.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+       tableView.refreshControl?.addTarget(self, action: #selector(fetchData), for: .valueChanged)
+    }
+    
+    @objc func fetchData() {
+        viewModel.fetchData { [weak self] in
+            self?.reloadData()
+            
+            DispatchQueue.main.async {
+                self?.tableView.refreshControl?.endRefreshing()
+            }
+        }
     }
     
     // MARK: - PostListViewControllable
