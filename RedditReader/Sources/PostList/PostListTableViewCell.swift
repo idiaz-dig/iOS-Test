@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PostListTableViewCellListener: class {
+    func dismissPostButtonTapped(at cell: UITableViewCell)
+}
+
 class PostListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var authorLabel: UILabel!
@@ -20,6 +24,8 @@ class PostListTableViewCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var postImageViewWidthConstraint: NSLayoutConstraint!
 
+    weak var listener: PostListTableViewCellListener?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -37,6 +43,10 @@ class PostListTableViewCell: UITableViewCell {
         if let imageURL = post.thumbnailURL {
             loadImage(with: imageURL)
         }
+    }
+    
+    @IBAction private func dismissPostButtonTapped() {
+        listener?.dismissPostButtonTapped(at: self)
     }
     
     private func getElapsedTime(from interval: TimeInterval) -> String {

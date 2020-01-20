@@ -10,8 +10,11 @@ import UIKit
 
 protocol PostListViewControllerListener: class {
     func fetchData(_ completion: @escaping (() -> Void))
+    
     func getNumberOfPosts() -> Int
     func getPost(by index: Int) -> Post?
+    
+    func dismissPost(at index: Int)
 }
 
 final class PostListViewController: UITableViewController {
@@ -60,6 +63,7 @@ final class PostListViewController: UITableViewController {
 
         if let post = viewModel.getPost(by: indexPath.row) {
             cell.setup(with: post)
+            cell.listener = self
         }
         
         return cell
@@ -87,5 +91,16 @@ final class PostListViewController: UITableViewController {
 
     func reloadData() {
         tableView.reloadData()
+    }
+}
+
+//MARK: - PostListTableViewCellListener
+extension PostListViewController: PostListTableViewCellListener {
+    
+    func dismissPostButtonTapped(at cell: UITableViewCell) {
+        if tableView.visibleCells.contains(cell), let indexPath = tableView.indexPath(for: cell) {
+            viewModel.dismissPost(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 }

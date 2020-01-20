@@ -29,4 +29,8 @@ final class PostListViewModel: PostListViewControllerListener {
     func getPost(by index: Int) -> Post? {
         return posts[safe: index]
     }
+    
+    func dismissPost(at index: Int) {
+        posts.remove(at: index)
+    }
 }
