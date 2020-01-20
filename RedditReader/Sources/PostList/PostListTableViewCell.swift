@@ -1,5 +1,5 @@
 //
-//  PostTableViewCell.swift
+//  PostListTableViewCell.swift
 //  RedditReader
 //
 //  Created by Ignacio Diaz on 20/01/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell {
+class PostListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

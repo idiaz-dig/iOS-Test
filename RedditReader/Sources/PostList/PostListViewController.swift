@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  PostListViewController.swift
 //  RedditReader
 //
 //  Created by Ignacio Diaz on 20/01/2020.
@@ -8,14 +8,15 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class PostListViewController: UITableViewController {
 
-    private var detailViewController: DetailViewController? = nil
+    private var detailViewController: PostDetailViewController? = nil
     private var posts = [Post]()
     private let cellIdentifier = "PostCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Reddit Posts"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +30,7 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let post = posts[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                let controller = (segue.destination as! UINavigationController).topViewController as! PostDetailViewController
                 controller.post = post
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
@@ -45,7 +46,7 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PostTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PostListTableViewCell else { return UITableViewCell() }
         return cell
     }
 }
