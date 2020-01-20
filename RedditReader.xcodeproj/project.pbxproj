@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BA2EC6323D5FCFB000F8CED /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2EC6223D5FCFB000F8CED /* PostList.swift */; };
 		3BB1DEB723D5DB4600B54EC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEB623D5DB4600B54EC1 /* AppDelegate.swift */; };
 		3BB1DEB923D5DB4600B54EC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEB823D5DB4600B54EC1 /* SceneDelegate.swift */; };
 		3BB1DEC023D5DB4600B54EC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BB1DEBE23D5DB4600B54EC1 /* Main.storyboard */; };
@@ -16,9 +17,10 @@
 		3BB1DEE823D5E6FC00B54EC1 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEE423D5E6FC00B54EC1 /* PostDetailViewController.swift */; };
 		3BB1DEE923D5E6FC00B54EC1 /* PostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEE623D5E6FC00B54EC1 /* PostListTableViewCell.swift */; };
 		3BB1DEEA23D5E6FC00B54EC1 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEE723D5E6FC00B54EC1 /* PostListViewController.swift */; };
-		3BB1DEEC23D5E78C00B54EC1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEEB23D5E78C00B54EC1 /* Post.swift */; };
 		3BB1DEEE23D5EC1200B54EC1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEED23D5EC1200B54EC1 /* PostListViewModel.swift */; };
 		3BB1DEF623D5EF9700B54EC1 /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEF523D5EF9700B54EC1 /* SafeArray.swift */; };
+		3BB1DEF823D5F44900B54EC1 /* RequestPostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEF723D5F44900B54EC1 /* RequestPostsService.swift */; };
+		3BB1DEFB23D5FAB300B54EC1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEFA23D5FAB300B54EC1 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BA2EC6223D5FCFB000F8CED /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		3BB1DEB323D5DB4600B54EC1 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BB1DEB623D5DB4600B54EC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BB1DEB823D5DB4600B54EC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,9 +48,10 @@
 		3BB1DEE423D5E6FC00B54EC1 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		3BB1DEE623D5E6FC00B54EC1 /* PostListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListTableViewCell.swift; sourceTree = "<group>"; };
 		3BB1DEE723D5E6FC00B54EC1 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
-		3BB1DEEB23D5E78C00B54EC1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3BB1DEED23D5EC1200B54EC1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		3BB1DEF523D5EF9700B54EC1 /* SafeArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeArray.swift; sourceTree = "<group>"; };
+		3BB1DEF723D5F44900B54EC1 /* RequestPostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPostsService.swift; sourceTree = "<group>"; };
+		3BB1DEFA23D5FAB300B54EC1 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +116,11 @@
 		3BB1DEE223D5E6FC00B54EC1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3BB1DEEB23D5E78C00B54EC1 /* Post.swift */,
 				3BB1DEE523D5E6FC00B54EC1 /* PostList */,
 				3BB1DEE323D5E6FC00B54EC1 /* PostDetail */,
+				3BB1DEF923D5FAB300B54EC1 /* Models */,
 				3BB1DEF423D5EF9700B54EC1 /* Other */,
+				3BB1DEF723D5F44900B54EC1 /* RequestPostsService.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -144,6 +149,15 @@
 				3BB1DEF523D5EF9700B54EC1 /* SafeArray.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		3BB1DEF923D5FAB300B54EC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BB1DEFA23D5FAB300B54EC1 /* Post.swift */,
+				3BA2EC6223D5FCFB000F8CED /* PostList.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,13 +262,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BB1DEF623D5EF9700B54EC1 /* SafeArray.swift in Sources */,
+				3BA2EC6323D5FCFB000F8CED /* PostList.swift in Sources */,
 				3BB1DEEE23D5EC1200B54EC1 /* PostListViewModel.swift in Sources */,
 				3BB1DEB723D5DB4600B54EC1 /* AppDelegate.swift in Sources */,
 				3BB1DEB923D5DB4600B54EC1 /* SceneDelegate.swift in Sources */,
 				3BB1DEE923D5E6FC00B54EC1 /* PostListTableViewCell.swift in Sources */,
-				3BB1DEEC23D5E78C00B54EC1 /* Post.swift in Sources */,
 				3BB1DEEA23D5E6FC00B54EC1 /* PostListViewController.swift in Sources */,
 				3BB1DEE823D5E6FC00B54EC1 /* PostDetailViewController.swift in Sources */,
+				3BB1DEF823D5F44900B54EC1 /* RequestPostsService.swift in Sources */,
+				3BB1DEFB23D5FAB300B54EC1 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

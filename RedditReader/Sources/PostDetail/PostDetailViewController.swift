@@ -16,7 +16,7 @@ class PostDetailViewController: UIViewController {
         // Update the user interface for the detail item.
         if let detail = post {
             if let label = detailDescriptionLabel {
-                label.text = detail.text
+                label.text = detail.title
             }
         }
     }

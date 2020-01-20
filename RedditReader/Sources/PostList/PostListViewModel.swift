@@ -11,6 +11,13 @@ import Foundation
 final class PostListViewModel: PostListViewControllerListener {
 
     private var posts = [Post]()
+    private lazy var postsService = RequestPostsService()
+    
+    init() {
+        postsService.getPosts { [weak self] (posts) in
+            self?.posts = posts
+        }
+    }
     
     // MARK:- PostListViewControllerListener
     
