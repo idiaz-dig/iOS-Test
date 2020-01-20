@@ -15,6 +15,7 @@
 		3BB1DEC223D5DB4700B54EC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BB1DEC123D5DB4700B54EC1 /* Assets.xcassets */; };
 		3BB1DEC523D5DB4700B54EC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BB1DEC323D5DB4700B54EC1 /* LaunchScreen.storyboard */; };
 		3BB1DED023D5DB4700B54EC1 /* RedditReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DECF23D5DB4700B54EC1 /* RedditReaderTests.swift */; };
+		3BB1DEDB23D5E31B00B54EC1 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEDA23D5E31B00B54EC1 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		3BB1DECB23D5DB4700B54EC1 /* RedditReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BB1DECF23D5DB4700B54EC1 /* RedditReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditReaderTests.swift; sourceTree = "<group>"; };
 		3BB1DED123D5DB4700B54EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BB1DEDA23D5E31B00B54EC1 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				3BB1DEB823D5DB4600B54EC1 /* SceneDelegate.swift */,
 				3BB1DEBA23D5DB4600B54EC1 /* MasterViewController.swift */,
 				3BB1DEBC23D5DB4600B54EC1 /* DetailViewController.swift */,
+				3BB1DEDA23D5E31B00B54EC1 /* PostTableViewCell.swift */,
 				3BB1DEBE23D5DB4600B54EC1 /* Main.storyboard */,
 				3BB1DEC123D5DB4700B54EC1 /* Assets.xcassets */,
 				3BB1DEC323D5DB4700B54EC1 /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 				3BB1DEB923D5DB4600B54EC1 /* SceneDelegate.swift in Sources */,
 				3BB1DEBB23D5DB4600B54EC1 /* MasterViewController.swift in Sources */,
 				3BB1DEBD23D5DB4600B54EC1 /* DetailViewController.swift in Sources */,
+				3BB1DEDB23D5E31B00B54EC1 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
