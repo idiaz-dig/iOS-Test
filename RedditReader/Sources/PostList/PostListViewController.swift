@@ -57,6 +57,11 @@ final class PostListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PostListTableViewCell else { return UITableViewCell() }
+
+        if let post = viewModel.getPost(by: indexPath.row) {
+            cell.setup(with: post)
+        }
+        
         return cell
     }
     

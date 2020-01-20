@@ -87,48 +87,60 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⬤" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-K3-P1H">
-                                            <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                            <rect key="frame" x="10" y="10" width="20" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="8Vk-xe-Vvf"/>
-                                                <constraint firstAttribute="height" constant="20" id="HfQ-b3-R5o"/>
+                                                <constraint firstAttribute="height" constant="25" id="HfQ-b3-R5o"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlh-uW-JEA">
-                                            <rect key="frame" x="40" y="10" width="52" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlh-uW-JEA">
+                                            <rect key="frame" x="40" y="10" width="52" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="qtT-SA-TcC"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgH-qj-Fmc">
-                                            <rect key="frame" x="102" y="10" width="271" height="21"/>
+                                            <rect key="frame" x="102" y="10" width="271" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="Ubw-EZ-dFi"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-uO-ffr">
-                                            <rect key="frame" x="10" y="39" width="70" height="70"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-uO-ffr">
+                                            <rect key="frame" x="10" y="43" width="70" height="71"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="YoQ-WW-eQN"/>
                                                 <constraint firstAttribute="width" constant="70" id="taG-kF-I5u"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFw-nj-El4">
-                                            <rect key="frame" x="10" y="111" width="104" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFw-nj-El4">
+                                            <rect key="frame" x="10" y="116" width="104" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="JWY-5w-7xc"/>
+                                            </constraints>
                                             <state key="normal" title="Dismiss Post">
-                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gM-Cm-7Ti">
-                                            <rect key="frame" x="90" y="39" width="283" height="70"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gM-Cm-7Ti">
+                                            <rect key="frame" x="90" y="43" width="283" height="71"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6C-tt-3Bw">
-                                            <rect key="frame" x="174" y="120" width="199" height="21"/>
+                                            <rect key="frame" x="174" y="116" width="199" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="ElC-3N-cE1"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -163,7 +175,8 @@
                                     <outlet property="dateLabel" destination="WgH-qj-Fmc" id="J8M-ff-J9d"/>
                                     <outlet property="dismissPostButton" destination="NFw-nj-El4" id="byf-rT-tSt"/>
                                     <outlet property="postImageView" destination="BZe-uO-ffr" id="B9e-2h-IkH"/>
-                                    <outlet property="postTextLabel" destination="2gM-Cm-7Ti" id="IQh-VC-MMt"/>
+                                    <outlet property="postImageViewWidthConstraint" destination="taG-kF-I5u" id="HyC-Lb-Nvl"/>
+                                    <outlet property="postTitleLabel" destination="2gM-Cm-7Ti" id="C7C-Pw-PWD"/>
                                     <outlet property="unreadStatusLabel" destination="i5Z-K3-P1H" id="9yC-aI-pqj"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
