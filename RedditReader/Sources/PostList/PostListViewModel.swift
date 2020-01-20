@@ -13,13 +13,14 @@ final class PostListViewModel: PostListViewControllerListener {
     private var posts = [Post]()
     private lazy var postsService = RequestPostsService()
     
-    init() {
+    // MARK:- PostListViewControllerListener
+
+    func fetchData(_ completion: @escaping (() -> Void)) {
         postsService.getPosts { [weak self] (posts) in
             self?.posts = posts
+            completion()
         }
     }
-    
-    // MARK:- PostListViewControllerListener
     
     func getNumberOfPosts() -> Int {
         return posts.count

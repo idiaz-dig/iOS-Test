@@ -9,6 +9,7 @@
 import UIKit
 
 protocol PostListViewControllerListener: class {
+    func fetchData(_ completion: @escaping (() -> Void))
     func getNumberOfPosts() -> Int
     func getPost(by index: Int) -> Post?
 }
@@ -23,6 +24,10 @@ final class PostListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Reddit Posts"
+        
+        viewModel.fetchData { [weak self] in
+            self?.reloadData()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -54,5 +59,10 @@ final class PostListViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PostListTableViewCell else { return UITableViewCell() }
         return cell
     }
-}
+    
+    // MARK: - PostListViewControllable
 
+    func reloadData() {
+        tableView.reloadData()
+    }
+}
