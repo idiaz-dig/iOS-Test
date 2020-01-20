@@ -33,12 +33,9 @@ class PostListTableViewCell: UITableViewCell {
 
         dateLabel.text = getElapsedTime(from: post.date)
 
-        if let imageURL = post.imageURL {
-            postImageViewWidthConstraint.constant = 70
+        postImageViewWidthConstraint.constant = 0
+        if let imageURL = post.thumbnailURL {
             loadImage(with: imageURL)
-        }
-        else {
-            postImageViewWidthConstraint.constant = 0
         }
     }
     
@@ -54,15 +51,16 @@ class PostListTableViewCell: UITableViewCell {
     private func loadImage(with url: String) {
         guard let url = URL(string: url) else { return }
 
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            if let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.postImageView.image = image
+                let image = UIImage(data: data) {
+
+                DispatchQueue.main.async() {
+                    self?.postImageViewWidthConstraint.constant = 70
+                    self?.postImageView.image = image
+                }
             }
         }.resume()
     }

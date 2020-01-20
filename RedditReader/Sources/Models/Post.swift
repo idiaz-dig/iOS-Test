@@ -12,6 +12,7 @@ struct Post: Codable {
     var author: String
     var date: TimeInterval
     var title: String
+    var thumbnailURL: String?
     var imageURL: String?
     var numberOfComments: Int
 
@@ -20,7 +21,8 @@ struct Post: Codable {
         case author = "author_fullname"
         case date = "created"
         case title = "title"
-        case imageURL = "thumbnail"
+        case thumbnailURL = "thumbnail"
+        case imageURL = "url"
         case numberOfComments = "num_comments"
     }
     
@@ -30,6 +32,7 @@ struct Post: Codable {
         self.author = try data.decode(String.self, forKey: .author)
         self.date = try data.decode(TimeInterval.self, forKey: .date)
         self.title = try data.decode(String.self, forKey: .title)
+        self.thumbnailURL = try data.decode(String.self, forKey: .thumbnailURL)
         self.imageURL = try data.decode(String.self, forKey: .imageURL)
         self.numberOfComments = try data.decode(Int.self, forKey: .numberOfComments)
     }
@@ -40,6 +43,7 @@ struct Post: Codable {
         try data.encode(self.author, forKey: .author)
         try data.encode(self.date, forKey: .date)
         try data.encode(self.title, forKey: .title)
+        try data.encode(self.thumbnailURL, forKey: .thumbnailURL)
         try data.encode(self.imageURL, forKey: .imageURL)
         try data.encode(self.numberOfComments, forKey: .numberOfComments)
     }

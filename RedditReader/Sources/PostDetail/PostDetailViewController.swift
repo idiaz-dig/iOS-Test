@@ -10,29 +10,41 @@ import UIKit
 
 class PostDetailViewController: UIViewController {
     
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var titleTextView: UITextView!
+    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var postImageViewHeightConstraint: NSLayoutConstraint!
 
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = post {
-            if let label = detailDescriptionLabel {
-                label.text = detail.title
+    var post: Post?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let post = post {
+            titleTextView.text = post.title
+            authorLabel.text = post.author
+
+            postImageViewHeightConstraint.constant = 0
+            if let imageURL = post.imageURL {
+                loadImage(with: imageURL)
             }
         }
     }
+    
+    private func loadImage(with url: String) {
+        guard let url = URL(string: url) else { return }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        configureView()
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            if let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data) {
+
+                DispatchQueue.main.async() {
+                    self?.postImageView.image = image
+                    self?.postImageViewHeightConstraint.constant = 250
+                }
+            }
+        }.resume()
     }
-
-    var post: Post? {
-        didSet {
-            configureView()
-        }
-    }
-
-
 }
-
