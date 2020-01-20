@@ -16,6 +16,7 @@
 		3BB1DEE823D5E6FC00B54EC1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEE423D5E6FC00B54EC1 /* DetailViewController.swift */; };
 		3BB1DEE923D5E6FC00B54EC1 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEE623D5E6FC00B54EC1 /* PostTableViewCell.swift */; };
 		3BB1DEEA23D5E6FC00B54EC1 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEE723D5E6FC00B54EC1 /* MasterViewController.swift */; };
+		3BB1DEEC23D5E78C00B54EC1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEEB23D5E78C00B54EC1 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		3BB1DEE423D5E6FC00B54EC1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3BB1DEE623D5E6FC00B54EC1 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		3BB1DEE723D5E6FC00B54EC1 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		3BB1DEEB23D5E78C00B54EC1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				3BB1DEE523D5E6FC00B54EC1 /* PostList */,
 				3BB1DEE323D5E6FC00B54EC1 /* PostDetail */,
+				3BB1DEEB23D5E78C00B54EC1 /* Post.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				3BB1DEB723D5DB4600B54EC1 /* AppDelegate.swift in Sources */,
 				3BB1DEB923D5DB4600B54EC1 /* SceneDelegate.swift in Sources */,
 				3BB1DEE923D5E6FC00B54EC1 /* PostTableViewCell.swift in Sources */,
+				3BB1DEEC23D5E78C00B54EC1 /* Post.swift in Sources */,
 				3BB1DEEA23D5E6FC00B54EC1 /* MasterViewController.swift in Sources */,
 				3BB1DEE823D5E6FC00B54EC1 /* DetailViewController.swift in Sources */,
 			);

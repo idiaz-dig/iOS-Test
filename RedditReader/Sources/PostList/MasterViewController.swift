@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     private var detailViewController: DetailViewController? = nil
-    private var objects = [Any]()
+    private var posts = [Post]()
     private let cellIdentifier = "PostCell"
 
     override func viewDidLoad() {
@@ -28,9 +28,9 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+                let post = posts[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
+                controller.post = post
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 detailViewController = controller
@@ -41,7 +41,7 @@ class MasterViewController: UITableViewController {
     // MARK: - Table View
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return posts.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
