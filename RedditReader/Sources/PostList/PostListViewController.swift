@@ -8,10 +8,16 @@
 
 import UIKit
 
-class PostListViewController: UITableViewController {
+protocol PostListViewControllerListener: class {
+    func getNumberOfPosts() -> Int
+    func getPost(by index: Int) -> Post?
+}
+
+final class PostListViewController: UITableViewController {
 
     private var detailViewController: PostDetailViewController? = nil
-    private var posts = [Post]()
+    private lazy var viewModel = PostListViewModel()
+    
     private let cellIdentifier = "PostCell"
 
     override func viewDidLoad() {
@@ -27,22 +33,21 @@ class PostListViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let post = posts[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! PostDetailViewController
+        if segue.identifier == "showDetail",
+            let controller = (segue.destination as? UINavigationController)?.topViewController as? PostDetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow,
+            let post = viewModel.getPost(by: indexPath.row) {
                 controller.post = post
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 detailViewController = controller
-            }
         }
     }
 
     // MARK: - Table View
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return viewModel.getNumberOfPosts()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

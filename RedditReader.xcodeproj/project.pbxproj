@@ -17,6 +17,8 @@
 		3BB1DEE923D5E6FC00B54EC1 /* PostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEE623D5E6FC00B54EC1 /* PostListTableViewCell.swift */; };
 		3BB1DEEA23D5E6FC00B54EC1 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEE723D5E6FC00B54EC1 /* PostListViewController.swift */; };
 		3BB1DEEC23D5E78C00B54EC1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEEB23D5E78C00B54EC1 /* Post.swift */; };
+		3BB1DEEE23D5EC1200B54EC1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEED23D5EC1200B54EC1 /* PostListViewModel.swift */; };
+		3BB1DEF623D5EF9700B54EC1 /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1DEF523D5EF9700B54EC1 /* SafeArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		3BB1DEE623D5E6FC00B54EC1 /* PostListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListTableViewCell.swift; sourceTree = "<group>"; };
 		3BB1DEE723D5E6FC00B54EC1 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		3BB1DEEB23D5E78C00B54EC1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		3BB1DEED23D5EC1200B54EC1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
+		3BB1DEF523D5EF9700B54EC1 /* SafeArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +112,10 @@
 		3BB1DEE223D5E6FC00B54EC1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3BB1DEEB23D5E78C00B54EC1 /* Post.swift */,
 				3BB1DEE523D5E6FC00B54EC1 /* PostList */,
 				3BB1DEE323D5E6FC00B54EC1 /* PostDetail */,
-				3BB1DEEB23D5E78C00B54EC1 /* Post.swift */,
+				3BB1DEF423D5EF9700B54EC1 /* Other */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -126,10 +131,19 @@
 		3BB1DEE523D5E6FC00B54EC1 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
+				3BB1DEED23D5EC1200B54EC1 /* PostListViewModel.swift */,
 				3BB1DEE723D5E6FC00B54EC1 /* PostListViewController.swift */,
 				3BB1DEE623D5E6FC00B54EC1 /* PostListTableViewCell.swift */,
 			);
 			path = PostList;
+			sourceTree = "<group>";
+		};
+		3BB1DEF423D5EF9700B54EC1 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				3BB1DEF523D5EF9700B54EC1 /* SafeArray.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +247,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BB1DEF623D5EF9700B54EC1 /* SafeArray.swift in Sources */,
+				3BB1DEEE23D5EC1200B54EC1 /* PostListViewModel.swift in Sources */,
 				3BB1DEB723D5DB4600B54EC1 /* AppDelegate.swift in Sources */,
 				3BB1DEB923D5DB4600B54EC1 /* SceneDelegate.swift in Sources */,
 				3BB1DEE923D5E6FC00B54EC1 /* PostListTableViewCell.swift in Sources */,
