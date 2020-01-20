@@ -29,7 +29,7 @@ class PostListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        dismissPostButton.setTitle("Dismiss Post", for: .normal)
+        dismissPostButton.setTitle("ⓧ Dismiss Post", for: .normal)
     }
     
     func setup(with post: Post) {
