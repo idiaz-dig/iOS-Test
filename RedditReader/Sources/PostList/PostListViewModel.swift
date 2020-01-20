@@ -33,4 +33,8 @@ final class PostListViewModel: PostListViewControllerListener {
     func dismissPost(at index: Int) {
         posts.remove(at: index)
     }
+    
+    func dismissAllPosts() {
+        posts.removeAll()
+    }
 }

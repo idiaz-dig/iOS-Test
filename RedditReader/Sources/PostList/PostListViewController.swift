@@ -15,6 +15,7 @@ protocol PostListViewControllerListener: class {
     func getPost(by index: Int) -> Post?
     
     func dismissPost(at index: Int)
+    func dismissAllPosts()
 }
 
 final class PostListViewController: UITableViewController {
@@ -37,7 +38,7 @@ final class PostListViewController: UITableViewController {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
     }
-
+    
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,6 +51,13 @@ final class PostListViewController: UITableViewController {
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 detailViewController = controller
         }
+    }
+    
+    // MARK: - IBActions
+
+    @IBAction private func dismissAllPostsButtonTapped() {
+        viewModel.dismissAllPosts()
+        tableView.reloadData()
     }
 
     // MARK: - Table View
