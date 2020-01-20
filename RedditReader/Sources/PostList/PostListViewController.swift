@@ -25,7 +25,7 @@ final class PostListViewController: UITableViewController {
         super.viewDidLoad()
 
         title = "Reddit Posts"
-        configureRefreshControl()
+        configureTableView()
 
         fetchData()
     }
@@ -64,15 +64,15 @@ final class PostListViewController: UITableViewController {
         
         return cell
     }
-    
-    // MARK: - Pull to refresh
-    
-    private func configureRefreshControl() {
-       tableView.refreshControl = UIRefreshControl()
-       tableView.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
-       tableView.refreshControl?.addTarget(self, action: #selector(fetchData), for: .valueChanged)
+
+    private func configureTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        tableView.refreshControl?.addTarget(self, action: #selector(fetchData), for: .valueChanged)
     }
-    
+
     @objc func fetchData() {
         viewModel.fetchData { [weak self] in
             self?.reloadData()
